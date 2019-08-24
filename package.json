@@ -1,0 +1,21 @@
+{
+  "name": "server-scaffold",
+  "version": "1.0.0",
+  "description": "Simple ExpressJS + Nodemon server scaffolding",
+  "license": "MIT",
+  "author": {
+    "name": "Rodrigo Mesquita",
+    "email": "rodrigoriome@gmail.com"
+  },
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -L src/index.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
