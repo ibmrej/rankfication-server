@@ -12,16 +12,26 @@
     "lint": "eslint src/**/*.js",
     "lintfix": "eslint src/**/*.js --fix",
     "dev": "nodemon -L src/index.js",
-    "start": "node src/index.js"
+    "predev": "npm-run-all db:migrate:undo db:migrate db:seed",
+    "start": "node src/index.js",
+    "db:migrate": "sequelize db:migrate",
+    "db:migrate:undo": "sequelize db:migrate:undo:all",
+    "db:seed": "sequelize db:seed:all"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "sequelize": "^5.16.0",
+    "sequelize-cli": "^5.5.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.2",
     "eslint": "^6.2.2",
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-prettier": "^3.1.0",
     "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2"
   }
 }
